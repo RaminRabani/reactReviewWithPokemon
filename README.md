@@ -16,13 +16,13 @@ Get additional practice with React by creating a front end application that rend
 ### Setup
 ```
   $ npm install
-  $ npm start
-  $ npm run build
+  $ npm start 
+  $ npm run build (//in a new tab)
 ```
 
 If you plan to redo this repo multiple times, make a new branch
 ```
-  $ git checkout -b attempt1
+  $ git checkout -b attempt1 (//in a new tab)
 ```
 
 When you are ready to try again, repeat as necessary
