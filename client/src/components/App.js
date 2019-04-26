@@ -38,7 +38,7 @@ class App extends React.Component {
 
       //this is equivalent to the copy above using ES6
       let pokemon = [...this.state.pokemon, {id, name, sprites}];
-      this.setState({pokemon});
+      this.setState({pokemon}); //{pokemon: pokemon}
     })
   }
 
