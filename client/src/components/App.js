@@ -9,6 +9,8 @@ class App extends React.Component {
     this.state = {
       pokemon: []
     }
+    this.getPokemon = this.getPokemon.bind(this);
+    this.shufflePokemon = this.shufflePokemon.bind(this);
   }
 
   componentDidMount() {
