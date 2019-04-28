@@ -16,10 +16,29 @@ class App extends React.Component {
     })
   }
 
+  getPokemon = (query) => {
+    this.props.getPokemon(query, (response) => {
+      let data = response.data;
+
+      let id = data.id;
+      let name = data.name;
+      let sprites = data.sprites;
+      
+      let copy = this.state.pokemon.slice();
+      copy.push({id:id, name:name, sprites: sprites});
+      this.setState({pokemon: copy})
+
+      // ^^^^^equivalent to:
+      // let pokemon = [...this.state.pokemon, {id, name, sprites}];
+      // this.setState({pokemon:pokemon})
+
+    })
+  }
+
   render() {
     return (
       <div>
-        <Search />
+        <Search getPokemon = {this.getPokemon}/>
         <PokemonList pokemon = {this.state.pokemon} />
       </div>
     );

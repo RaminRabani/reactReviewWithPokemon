@@ -5,4 +5,4 @@ import App from './components/App';
 import pokemon from '../../data/fakePokemonData';
 import getPokemon from '../../lib/getPokemon';
 
-ReactDOM.render(<App pokemon = {pokemon}/>, document.getElementById('thisIsMyID'));
+ReactDOM.render(<App pokemon = {pokemon} getPokemon = {getPokemon}/>, document.getElementById('thisIsMyID'));
