@@ -10,14 +10,15 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange (e) {
+  handleChange = (e) => {
     let query = e.target.value;
     this.setState({ query } /*, () => console.log(this.state) */ )
   }
 
-  handleSubmit (e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    // this.props.getPokemon();
   }
 
   render() {
