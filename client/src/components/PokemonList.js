@@ -1,25 +1,12 @@
 import React from 'react';
 import PokemonListItem from './PokemonListItem';
 
-class PokemonList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render () {
+var PokemonList = (props) => {
     return (
         <div id="pokemonList">
-          <PokemonListItem />
-          <PokemonListItem />
-          <PokemonListItem />
-          <PokemonListItem />
-          <PokemonListItem />
+          {props.pokemon.map(function(item, i) {return (<PokemonListItem item={item} key={i} />)})}
         </div>
     )
-  }
 };
 
 export default PokemonList;
