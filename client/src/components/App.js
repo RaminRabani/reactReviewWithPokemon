@@ -7,19 +7,18 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokemon: []
+      pokemon: [],
     }
     this.getPokemon = this.getPokemon.bind(this);
     this.shufflePokemon = this.shufflePokemon.bind(this);
   }
 
   componentDidMount() {
-    this.setState({
-      pokemon: this.props.pokemon
-    })
+    var count = 1;
+    this.getPokemon(count, true);
   }
 
-  getPokemon = (query) => {
+  getPokemon = (query, componentMount = false) => {
     this.props.getPokemon(query, (response) => {
       let data = response.data;
 
@@ -34,7 +33,9 @@ class App extends React.Component {
       // ^^^^^equivalent to:
       // let pokemon = [...this.state.pokemon, {id, name, sprites}];
       // this.setState({pokemon:pokemon})
-
+      if (componentMount && query < 151) {
+        this.getPokemon(query + 1, true);
+      }
     })
   }
 
